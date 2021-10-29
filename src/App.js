@@ -1,24 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { createBrowserHistory  } from 'history'
+
+import 'bootstrap/dist/css/bootstrap.css';
+
+import ListBoardComponent from "./components/ListBoardComponent";
+import HeaderComponents from "./components/HeaderComponents";
+import FooterComponents from "./components/FooterComponents";
+import CreateBoardComponent from "./components/CreateBoardComponent";
+import ReadBoardComponent from "./components/ReadBoardComponent";
+import PostList from "./components/PostList";
+import BoardListContainer from "./components/containers/BoardListContainer";
+
+const browserHistory = createBrowserHistory();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+          <Router>
+              <HeaderComponents />
+                  <div className="container">
+                      <Switch>
+                          <Route path = "/" exact component = {ListBoardComponent}></Route>
+                          <Route path="/board" component = {ListBoardComponent}></Route>
+                          <Route path = "/create-board" component = {CreateBoardComponent}></Route>
+                          <Route path = "/read-board/:num" component = {ReadBoardComponent}></Route>
+                          <Route path = "/postList" component = {PostList}></Route>
+                          <Route path = "/boardList" component = {BoardListContainer}></Route>
+                      </Switch>
+                  </div>
+              <FooterComponents/>
+          </Router>
+      </div>
   );
 }
 
