@@ -94,6 +94,7 @@ class PagingNation extends Component{
 
     handlerLastPageMove(e, data){
         e.preventDefault();
+        console.log(data);
         if(data.isBtnLast) this.handlerPageChange(data.endPage, this.props.rowCount);
     }
 

@@ -38,7 +38,7 @@ class BoardListContainer extends Component{
 
     pageChange(page, limit){
         BoardService.getBoardList(page, limit).then((res) => {
-            this.setState({page, boardList : res.data.boardList, totalRow : res.data.totalRow});
+            this.setState({page, boardList : res.data.content, totalRow : res.data.totalElements});
         });
 
         PagingNation.updateBrowserHistory(page, browserHistory);
@@ -57,7 +57,7 @@ class BoardListContainer extends Component{
                               rowCount={this.state.rowCount}
                               onPageChange={this.pageChange} />
                 <Link className="btn btn-default btn-sm" to="/post">
-                    <i className="fa fa-bars" /> 등록록
+                    <i className="fa fa-bars" /> 등록
                </Link>
             </div>
         );
