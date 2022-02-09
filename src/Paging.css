@@ -52,3 +52,8 @@ ul.pagination li a:hover, ul.pagination li a.active {
     color: #337ab7;
 }
 
+.component--item_card {
+    overflow: hidden;
+    border-bottom: 1px solid #ddd;
+    margin: 10px 0;
+}

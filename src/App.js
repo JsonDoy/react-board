@@ -12,6 +12,7 @@ import CreateBoardComponent from "./components/CreateBoardComponent";
 import ReadBoardComponent from "./components/ReadBoardComponent";
 import PostList from "./components/PostList";
 import BoardListContainer from "./components/containers/BoardListContainer";
+import DelivaryComponent from "./components/DelivaryComponent";
 
 const browserHistory = createBrowserHistory();
 
@@ -28,6 +29,7 @@ function App() {
                           <Route path = "/read-board/:num" component = {ReadBoardComponent}></Route>
                           <Route path = "/postList" component = {PostList}></Route>
                           <Route path = "/boardList" component = {BoardListContainer}></Route>
+                          <Route path = "/delivary" component = {DelivaryComponent}></Route>
                       </Switch>
                   </div>
               <FooterComponents/>

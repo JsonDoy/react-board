@@ -55,6 +55,9 @@ class PagingNation extends Component{
             endPage = totalPage || 1;
         }
 
+        //console.log("totalpage = " + totalPage);
+        //console.log("endPage = " + endPage);
+
         const isBtnLast = endPage > this.props.page;
 
         const pageItems = (endPage - startPage) + 1;
@@ -95,7 +98,7 @@ class PagingNation extends Component{
     handlerLastPageMove(e, data){
         e.preventDefault();
         console.log(data);
-        if(data.isBtnLast) this.handlerPageChange(data.endPage, this.props.rowCount);
+        if(data.isBtnLast) this.handlerPageChange(data.totalPage, this.props.rowCount);
     }
 
     handlerPrevPageMove(e, data){

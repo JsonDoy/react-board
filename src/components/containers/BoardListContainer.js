@@ -56,7 +56,7 @@ class BoardListContainer extends Component{
                               pageCount={this.state.pageCount}
                               rowCount={this.state.rowCount}
                               onPageChange={this.pageChange} />
-                <Link className="btn btn-default btn-sm" to="/post">
+                <Link className="btn btn-default btn-sm" to="/create-board">
                     <i className="fa fa-bars" /> 등록
                </Link>
             </div>

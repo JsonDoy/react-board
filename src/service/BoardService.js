@@ -39,6 +39,10 @@ class BoardService {
     getOneBoard(num) {
         return axios.get(BOARD_API_BASE_URL + '/select' , { params : { num : num}});
     }
+
+    getDelivary(deli){
+        return axios.get(BOARD_API_BASE_URL + "/delivary", {params : deli });
+    }
 }
 
 export default new BoardService();

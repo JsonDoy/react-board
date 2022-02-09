@@ -33,12 +33,10 @@ class BoardList extends Component{
             <table className="table table-hover">
                 <colgroup>
                     <col width="50" />
-                    <col />
-                    <col width="200" />
-                    <col width="200" />
                     <col width="100" />
                     <col width="100" />
-                    <col width="50" />
+                    <col width="100" />
+                    <col width="100" />
                 </colgroup>
                 <thead>
                 <tr>
@@ -54,11 +52,7 @@ class BoardList extends Component{
                     this.props.boardList.map((board, i) => (
                         <tr key={board.num}>
                             <td className="text-center">{virtualSeq - i}</td>
-                            <td>
-                                <a
-                                    href=""
-                                    onClick={e => this.handlerBoardView(e, board.boardIdx)}
-                                >{board.stCode}</a></td>
+                            <td><a href="" onClick={e => this.handlerBoardView(e, board.boardIdx)}>{board.stCode}</a></td>
                             <td>{board.stName}</td>
                             <td>{board.stPrice}</td>
                             <td>{board.regDt}</td>
