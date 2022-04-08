@@ -32,8 +32,9 @@ class BoardListContainer extends Component{
         this.pageChange(PagingNation.getPage(this.state.page));
     }
 
-    boardView(num){
-        browserHistory.push({pathname : `/${num}`, query : this.props.location.query});
+    boardView(num,stcode){
+        //browserHistory.push({pathname : `/${num}`, query : this.props.location.query});
+        this.props.history.push(`/read-board/${num}/${stcode}`);
     }
 
     pageChange(page, limit){

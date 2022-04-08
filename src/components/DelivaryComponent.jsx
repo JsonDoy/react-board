@@ -55,6 +55,11 @@ class DelivaryComponent extends Component{
                     carrierTel : res.data.carrierTel,
                     inputLinkClicked: true
                 });
+            }else{
+                this.setState({
+                    message : res.data.message,
+                    inputLinkClicked: false
+                })
             }
         });
     }
@@ -85,7 +90,7 @@ class DelivaryComponent extends Component{
                             </div>
                         </div>
                         <div>
-                            {this.state.inputLinkClicked?<DelivaryResult items={this.state} />:<div></div>}
+                            {this.state.inputLinkClicked? <DelivaryResult items={this.state} />:<div><p style={{textAlign : 'center', fontSize : '20px'}}><strong>{this.state.message}</strong></p></div>}
                         </div>
                     </div>
                 </div>

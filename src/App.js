@@ -26,7 +26,7 @@ function App() {
                           <Route path = "/" exact component = {ListBoardComponent}></Route>
                           <Route path="/board" component = {ListBoardComponent}></Route>
                           <Route path = "/create-board" component = {CreateBoardComponent}></Route>
-                          <Route path = "/read-board/:num" component = {ReadBoardComponent}></Route>
+                          <Route path = "/read-board/:num/:stcode" component = {ReadBoardComponent}></Route>
                           <Route path = "/postList" component = {PostList}></Route>
                           <Route path = "/boardList" component = {BoardListContainer}></Route>
                           <Route path = "/delivary" component = {DelivaryComponent}></Route>

@@ -17,13 +17,42 @@ class BoardList extends Component{
 
     constructor(props) {
         super(props);
-
+        console.log('constructor');
         this.handlerBoardView = this.handlerBoardView.bind(this);
     }
 
-    handlerBoardView(e, boardIdx){
+    componentWillMount() {
+        console.log('componentWillMount');
+    }
+
+    componentDidMount() {
+        console.log('componentDidMount');
+    }
+
+    componentWillReceiveProps(nextProps) {
+        console.log('componentWillReceiveProps');
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log('shouldComponentUpdate');
+        return true / false;
+    }
+
+    componentWillUpdate(nextProps, nextState) {
+        console.log('componentWillUpdate');
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        console.log('componentDidUpdate');
+    }
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount');
+    }
+
+    handlerBoardView(e, boardIdx, stcode){
         e.preventDefault();
-        this.props.onBoardView(boardIdx);
+        this.props.onBoardView(boardIdx,stcode);
     }
 
     render() {
@@ -52,7 +81,7 @@ class BoardList extends Component{
                     this.props.boardList.map((board, i) => (
                         <tr key={board.num}>
                             <td className="text-center">{virtualSeq - i}</td>
-                            <td><a href="" onClick={e => this.handlerBoardView(e, board.boardIdx)}>{board.stCode}</a></td>
+                            <td><a href="" onClick={e => this.handlerBoardView(e, board.num, board.stCode)}>{board.stCode}</a></td>
                             <td>{board.stName}</td>
                             <td>{board.stPrice}</td>
                             <td>{board.regDt}</td>

@@ -7,12 +7,13 @@ class ReadBoardComponent extends Component{
         console.log("readBoard -> " + this.props.match.params.num);
         this.state = {
             num : this.props.match.params.num,
+            stcode : this.props.match.params.stcode,
             board : {}
         }
     }
 
     componentDidMount() {
-        BoardService.getOneBoard(this.state.num).then(res => {
+        BoardService.getOneBoard(this.state.num, this.state.stcode).then(res => {
            this.setState({board: res.data});
         });
     }
@@ -54,8 +55,8 @@ class ReadBoardComponent extends Component{
                     <div className = "card-body">
 
                         {this.returnBoardType(this.state.board.type)}
-                        <div className = "row">
 
+                        <div className = "row">
                             <label> stCode </label> : {this.state.board.stCode}
                         </div>
 

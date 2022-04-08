@@ -4,8 +4,6 @@ class HeaderComponents extends Component{
 
     constructor(props) {
         super(props);
-
-        this.state = {}
     }
 
     render() {
@@ -13,7 +11,7 @@ class HeaderComponents extends Component{
             <div>
                 <header>
                     <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                        <div><a href="https://localhost:3000" className="navbar-brand"> Board-FullStack-App</a></div>
+                        <div><a href="http://localhost:3000" className="navbar-brand"> DOY APP </a></div>
                     </nav>
                 </header>
             </div>

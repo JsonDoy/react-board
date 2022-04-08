@@ -35,6 +35,7 @@ class PagingNation extends Component{
     }
 
     static updateBrowserHistory(page, browserHistory) {
+        console.log(page + " , " + browserHistory);
         const params = qs.parse(window.location.search.substring(1));
         params.page = page;
         browserHistory.push(`?${qs.stringify(params)}`);
@@ -42,6 +43,16 @@ class PagingNation extends Component{
 
     constructor(props) {
         super(props);
+
+        this.handlerFirstPageMove = this.handlerFirstPageMove.bind(this);
+        this.handlerLastPageMove = this.handlerLastPageMove.bind(this);
+        this.handlerPrevPageMove = this.handlerPrevPageMove.bind(this);
+        this.handlerNextPageMove = this.handlerNextPageMove.bind(this);
+        this.handlerPageMove = this.handlerPageMove.bind(this);
+
+        this.handlerPageChange = this.handlerPageChange.bind(this);
+
+        this.calculation = this.calculation.bind(this);
 
     }
 

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const BOARD_API_BASE_URL = "http://localhost:8080/api";
+const BOARD_API_BASE_URL = "http://localhost:8088/api";
 
 let count = 0;
 
@@ -36,8 +36,8 @@ class BoardService {
         return axios.post('http://localhost:8080/api/save', board);
     }
 
-    getOneBoard(num) {
-        return axios.get(BOARD_API_BASE_URL + '/select' , { params : { num : num}});
+    getOneBoard(num, stcode) {
+        return axios.get(BOARD_API_BASE_URL + '/select' , { params : { num : num, stcode : stcode}});
     }
 
     getDelivary(deli){

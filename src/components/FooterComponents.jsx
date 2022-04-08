@@ -4,18 +4,13 @@ class FooterComponents extends Component{
 
     constructor(props) {
         super(props)
-
-        this.state = {
-
-        }
     }
 
     render() {
         return (
             <div>
-                <footer className="footer">
-                    <span className="text-muted">Started 2020 </span>
-
+                <footer className="footer" style={{textAlign : 'center', fontSize : '20px'}}>
+                    <span>Create By DoyApp 2022. </span>
                 </footer>
             </div>
         );
