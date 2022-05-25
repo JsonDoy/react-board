@@ -33,11 +33,19 @@ class BoardService {
     }
 
     createBoard(board){
-        return axios.post('http://localhost:8080/api/save', board);
+        return axios.post(BOARD_API_BASE_URL + '/save' , board, {withCredentials : true});
+    }
+
+    updateBoard(board){
+        return axios.post(BOARD_API_BASE_URL + '/update', board);
     }
 
     getOneBoard(num, stcode) {
         return axios.get(BOARD_API_BASE_URL + '/select' , { params : { num : num, stcode : stcode}});
+    }
+
+    getDetailBoard(num) {
+        return axios.get(BOARD_API_BASE_URL + '/detail' , { params : { num : num}});
     }
 
     getDelivary(deli){

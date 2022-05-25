@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import {Link} from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const propTypes = {
@@ -66,11 +67,13 @@ class BoardList extends Component{
                     <col width="100" />
                     <col width="100" />
                     <col width="100" />
+                    <col width="100" />
                 </colgroup>
                 <thead>
                 <tr>
                     <th scope="col">번호</th>
                     <th scope="col">종목번호</th>
+                    <th scope="col">수정페이지이동</th>
                     <th scope="col">종목명</th>
                     <th scope="col">가격</th>
                     <th scope="col">등록일</th>
@@ -82,6 +85,7 @@ class BoardList extends Component{
                         <tr key={board.num}>
                             <td className="text-center">{virtualSeq - i}</td>
                             <td><a href="" onClick={e => this.handlerBoardView(e, board.num, board.stCode)}>{board.stCode}</a></td>
+                            <td><Link to={`/updateView/${board.num}/${board.stCode}`}>{ board.stCode }</Link></td>
                             <td>{board.stName}</td>
                             <td>{board.stPrice}</td>
                             <td>{board.regDt}</td>
